@@ -20,20 +20,20 @@ function App() {
 function IndexComp() {
   const navigate = useNavigate();
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<Home navigate={navigate} />} />
         <Route path="/info" element={<Info navigate={navigate} />} />
       </Routes>
-    </div>
+    </>
   );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <div>
+  <>
     <App />
-  </div>
+  </>
 );
 
 serviceWorkerRegistration.register();

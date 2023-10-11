@@ -1,9 +1,47 @@
+@import "main";
 .imgBackground {
-  width: 100vw;
+  width: 99vw;
   height: auto;
+  margin:0px;
+  z-index: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100vh), 0 calc(100vh));
+  @media (max-width: 500px) {
+    width: 150vw;
+    transform: translateX(-40vw);
+  }
 }
 
 .cardBox {
   width: 100vw;
   height: auto;
+}
+
+.cardContainer{
+  @include flex(row,space-around,flex-start);
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+
+}
+
+.title{
+  font-size: 35px;
+  // z-index: 1;
+  z-index: 1;
+  background: transparent;
+  padding: 5px 10px;
+  margin: 5px 10px;
+}
+.info{
+  font-size: 18px;
+  z-index: 1;
+  background: transparent;
+}
+.firstContainer{
+  width: 100VW;
+  height: 100vh;
+  @include flex(column, flex-end,center);
+  font-family: 'Poppins';
 }

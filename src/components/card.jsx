@@ -3,7 +3,7 @@ import { Card } from "antd";
 const { Meta } = Card;
 
 import PropTypes from "prop-types";
-import img from "@images/clubs_ace.jpeg";
+import img from "@images/images1.jpeg";
 
 // import HomeStyle from "@styles/home.module.scss"
 const APP = ({ cardInfo, navigate }) => {
@@ -18,7 +18,8 @@ const APP = ({ cardInfo, navigate }) => {
     <Card
       hoverable
       style={{
-        width: 150,
+        width: 300,
+        marginBottom: "20px",
       }}
       cover={<img alt="sample" src={img} />}
       onClick={cardClick}
