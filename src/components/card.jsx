@@ -7,7 +7,7 @@ import img from "@images/images1.jpeg";
 
 // import HomeStyle from "@styles/home.module.scss"
 const APP = ({ cardInfo, navigate }) => {
-  console.log(cardInfo);
+  // console.log(cardInfo);
 
   let cardClick = () => {
     localStorage.setItem("cardInfo", JSON.stringify(cardInfo));

@@ -2,17 +2,30 @@ import backgroundImg from "@images/cupid.jpg";
 
 import homeStyle from "@styles/home.module.scss";
 import indexStyle from "@styles/index.module.scss";
-import React from "react";
+import React, { useEffect,  useRef } from "react";
 
 import cardsInfo from "@utils/cardsInfo.json";
 import CardComp from "@components/card";
 // import { List } from "antd";
 
 import PropTypes from "prop-types";
+import Carousel from "@components/carousel";
 
 export default function Home({ navigate }) {
+  const sectionRef = useRef(null);
+  function CatpureScroll(event){
+    localStorage.setItem("scrollTop", event.currentTarget.scrollTop);
+  }
+  useEffect(()=>{
+    if (sectionRef.current) {
+      // console.log(localStorage.getItem("scrollTop"));
+      sectionRef.current.scrollTop = parseInt(
+        localStorage.getItem("scrollTop")
+      ); // Set the desired initial value (in pixels)
+    }
+  },[])
   return (
-    <section className={indexStyle.section}>
+    <section className={indexStyle.section} onScroll={CatpureScroll} ref={sectionRef}>
       <div className={homeStyle.firstContainer}>
         <img src={backgroundImg} className={homeStyle.imgBackground} />
         <img />
@@ -20,6 +33,9 @@ export default function Home({ navigate }) {
         <p className={homeStyle.info}>
           Nov 22, 2023 • Chennai, Tamil Nadu, India
         </p>
+      </div>
+      <div className={homeStyle.CarouselContainer}>
+        <Carousel />
       </div>
       <div className={homeStyle.eventCardContainer}>
         <div className={homeStyle.eventCard}>
@@ -48,8 +64,8 @@ export default function Home({ navigate }) {
         </div>
       </div>
       <div className={homeStyle.cardContainer}>
-        {cardsInfo.map((card) => {
-          return <CardComp cardInfo={card} key={card.id} navigate={navigate} />;
+        {cardsInfo.map((card, index) => {
+          return <CardComp key={index} cardInfo={card} navigate={navigate} />;
         })}
       </div>
     </section>
