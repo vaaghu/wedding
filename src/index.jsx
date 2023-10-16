@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { useNavigate } from "react-router-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import * as serviceWorkerRegistration from "@utils/serviceWorkerRegistration";
+// import * as serviceWorkerRegistration from "@utils/serviceWorkerRegistration";
 
 import Home from "@pages/home";
 import Info from "@pages/info";
@@ -36,4 +36,4 @@ root.render(
   </>
 );
 
-serviceWorkerRegistration.register();
+// serviceWorkerRegistration.register();
