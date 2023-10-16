@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import infoStyles from "@styles/info.module.scss";
 import indexStyles from "@styles/index.module.scss";
 
-import cardImg from "@images/images1.jpeg"
+import cardImg from "@images/home.webp"
 import backArrow from "@images/arrow_back.svg"
 export default function Info({ navigate }) {
   let [cardInfo, setCardInfo] = useState(null);
@@ -26,9 +26,11 @@ export default function Info({ navigate }) {
         <div className={infoStyles.card}>
           <img src={cardImg} alt="backImg" />
           <div className={infoStyles.cardInfo}>
-            <p>{cardInfo.title}</p>
-            <p>{cardInfo.description}</p>
-            <button>BUY</button>
+            <div>
+              <p>{cardInfo.title}</p>
+              <p>{cardInfo.description}</p>
+            </div>
+            <button>Gift it!</button>
           </div>
         </div>
       )}

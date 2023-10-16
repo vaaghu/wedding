@@ -9,17 +9,44 @@
     border-radius: 15px;
     margin-bottom: 50px;
     @include flex(row,flex-start,center);
-    background-color: rgb(250, 246, 215);
+    background-color: rgb(255, 255, 255);
     padding: 20px;
-    width: auto;
+    width: 600px;
+    height: 350px;
     max-width: 75vw;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    &:hover{
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+    img{
+      width: 320px;
+      height: 320px;
+      border-radius: 15px;
+      object-fit: cover;
+      object-position:center;
+      @media (max-width: 400px) {
+        width: 80vw;
+        height: auto;
+      }
+    }
     @media (max-width: 680px) {
-        @include flex(column,flex-start,center);
+      @include flex(column,flex-start,center);
+      width: auto;
+      height: fit-content;
     }
 }
+
 .cardInfo{
     padding: 5px 25px;
+    // height: 80%;
+    width: 320px;
+    @media (max-width: 400px) {
+      width: 95%;
+    }
+    @media (min-width: 680px) {
+      width: 250px;
+      height: 300px;
+      @include flex(column,space-between,center);
+    }
     p{
         text-align: center;
         font-family: "Poppins",sans-serif;
@@ -31,22 +58,21 @@
         font-weight: 700;
     }
     p:nth-child(2){
-        font-size: 18px;
+      font-size: 18px;
     }
     @include flex(column,flex-start,center);
     button{
         border-radius: 15px;
         width: auto;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 400;
         padding: 3px 15px;
         font-family: 'Poppins',sans-serif;
         margin: 15px 3px;
         border: none;
         background-color: transparent;
         border: 1px solid rgba(0, 0, 0, 0.2);
-        background: rgba(0, 128, 0, 0.3);
-        box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.6);
+        background: pink;
     }
 }
 .backButton{

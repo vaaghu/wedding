@@ -7,6 +7,7 @@
   left: 0px;
   margin:0px;
   overflow-x:  hidden;
-  background: #cccccc;
+  background: #e2e8f0;
   height: -webkit-fill-available;
+  @include flex(column,flex-start,center)
 }

@@ -1,8 +1,7 @@
 import backgroundImg from "@images/cupid.jpg";
-
 import homeStyle from "@styles/home.module.scss";
 import indexStyle from "@styles/index.module.scss";
-import React, { useEffect,  useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 import cardsInfo from "@utils/cardsInfo.json";
 import CardComp from "@components/card";
@@ -13,28 +12,32 @@ import Carousel from "@components/carousel";
 
 export default function Home({ navigate }) {
   const sectionRef = useRef(null);
-  function CatpureScroll(event){
+  function CatpureScroll(event) {
     localStorage.setItem("scrollTop", event.currentTarget.scrollTop);
   }
-  useEffect(()=>{
+  useEffect(() => {
     if (sectionRef.current) {
       // console.log(localStorage.getItem("scrollTop"));
       sectionRef.current.scrollTop = parseInt(
         localStorage.getItem("scrollTop")
       ); // Set the desired initial value (in pixels)
     }
-  },[])
+  }, []);
   return (
-    <section className={indexStyle.section} onScroll={CatpureScroll} ref={sectionRef}>
-      <div className={homeStyle.firstContainer}>
+    <section
+      className={indexStyle.section}
+      onScroll={CatpureScroll}
+      ref={sectionRef}
+    >
+      {/* <div className={homeStyle.firstContainer}>
         <img src={backgroundImg} className={homeStyle.imgBackground} />
         <img />
         <p className={homeStyle.title}>NAME_ONE & NAME_TWO</p>
         <p className={homeStyle.info}>
           Nov 22, 2023 • Chennai, Tamil Nadu, India
         </p>
-      </div>
-      <div className={homeStyle.CarouselContainer}>
+      </div> */}
+      {/* <div className={homeStyle.CarouselContainer}>
         <Carousel />
       </div>
       <div className={homeStyle.eventCardContainer}>
@@ -62,7 +65,7 @@ export default function Home({ navigate }) {
             Chennai, TN, 600017, India
           </p>
         </div>
-      </div>
+      </div> */}
       <div className={homeStyle.cardContainer}>
         {cardsInfo.map((card, index) => {
           return <CardComp key={index} cardInfo={card} navigate={navigate} />;
