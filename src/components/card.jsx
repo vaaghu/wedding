@@ -3,7 +3,6 @@ import { Card, Skeleton } from "antd";
 const { Meta } = Card;
 
 import PropTypes from "prop-types";
-import img from "@images/home.webp";
 
 // import HomeStyle from "@styles/home.module.scss"
 const CardComp = ({ cardInfo, navigate }) => {
@@ -18,7 +17,7 @@ const CardComp = ({ cardInfo, navigate }) => {
   const [image, setImage] = useState(null);
   
   useEffect(() => {
-    import(`/src/assets/images/${cardInfo.imgName}.webp`)
+    import(`../assets/images/${cardInfo.imgName}.webp`)
       .then((imageModule) => {
         setImage(imageModule.default);
       })
