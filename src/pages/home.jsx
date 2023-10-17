@@ -1,4 +1,5 @@
-import backgroundImg from "@images/cupid.jpg";
+/* eslint-disable prettier/prettier */
+// import backgroundImg from "@images/cupid.jpg";
 import homeStyle from "@styles/home.module.scss";
 import indexStyle from "@styles/index.module.scss";
 import React, { useEffect, useRef } from "react";
@@ -8,7 +9,7 @@ import CardComp from "@components/card";
 // import { List } from "antd";
 
 import PropTypes from "prop-types";
-import Carousel from "@components/carousel";
+// import Carousel from "@components/carousel";
 
 export default function Home({ navigate }) {
   const sectionRef = useRef(null);
@@ -66,6 +67,8 @@ export default function Home({ navigate }) {
           </p>
         </div>
       </div> */}
+      <h1>Our Wish list</h1>
+      <br />
       <div className={homeStyle.cardContainer}>
         {cardsInfo.map((card, index) => {
           return <CardComp key={index} cardInfo={card} navigate={navigate} />;

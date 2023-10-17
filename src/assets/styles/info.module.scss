@@ -15,6 +15,9 @@
   width: 600px;
   // height: 350px;
   max-width: 75vw;
+  p {
+    font-size: 18px;
+  }
   &:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   }
@@ -56,13 +59,11 @@
   }
   p {
     text-align: center;
-    font-family: "Poppins", sans-serif;
+    font-family: "CormorantGaramond", "Poppins", sans-serif;
     margin: 20px 5px;
-  }
-  p:nth-child(1) {
-    font-size: 20px;
-    font-style: bold;
-    font-weight: 700;
+    font-size: 30px;
+    // font-style: bold;
+    font-weight: 400;
   }
   // p:nth-child(2){
   //   font-size: 18px;
@@ -83,10 +84,10 @@
 .cardButton {
   border-radius: 15px;
   width: auto;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 400;
   padding: 3px 15px;
-  font-family: "Poppins", sans-serif;
+  font-family: "CormorantGaramond", "Poppins", sans-serif;
   margin: 15px 3px;
   border: none;
   background-color: transparent;

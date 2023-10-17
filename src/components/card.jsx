@@ -36,6 +36,8 @@ const CardComp = ({ cardInfo, navigate }) => {
             width: 300,
             marginBottom: "25px",
             border: "10px solid white",
+            fontFamily: "CormorantGaramond, Poppins, sans-serif",
+            fontSize: "14px",
           }}
           cover={<img alt="sample" src={image} />}
           onClick={cardClick}
@@ -44,9 +46,13 @@ const CardComp = ({ cardInfo, navigate }) => {
           <br />
           {progress >= 1 && (
             <Progress
+              style={{
+                fontFamily: "CormorantGaramond, Poppins, sans-serif",
+                fontSize: "14px",
+              }}
               status={progress != 100 ? "active" : "success"}
               percent={progress}
-              strokeColor={{ from: "#ff0000", to: "#87d068" }}
+              strokeColor={{ from: "teal", to: "pink" }}
             />
           )}
         </Card>

@@ -43,7 +43,11 @@ export default function Info({ navigate }) {
                 status={progress != 100 ? "active" : "success"}
                 type="dashboard"
                 percent={progress}
-                strokeColor={{ "0%": "#ff0000", "100%": "#87d068" }}
+                strokeColor={{ "0%": "teal", "100%": "pink" }}
+                style={{
+                  fontFamily: "CormorantGaramond, Poppins, sans-serif",
+                  fontSize: "14px",
+                }}
               />
             </div>
           </div>
@@ -51,7 +55,12 @@ export default function Info({ navigate }) {
             {collapseItems && (
               <Collapse
                 items={collapseItems}
-                style={{ width: "100%", backgroundColor: "#e2e8f0" }}
+                style={{
+                  width: "100%",
+                  backgroundColor: "#e2e8f0",
+                  fontFamily: "CormorantGaramond, Poppins, sans-serif",
+                  fontSize: "17px",
+                }}
                 bordered={false}
               />
             )}

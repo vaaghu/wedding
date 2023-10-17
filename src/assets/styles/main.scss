@@ -1,4 +1,4 @@
-@mixin flex($direction, $justifyContent, $alignItems){
+@mixin flex($direction, $justifyContent, $alignItems) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justifyContent;
@@ -8,6 +8,13 @@
 @font-face {
   font-family: "Poppins";
   src: url("@assets/fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "CormorantGaramond";
+  src: url("@assets/fonts/Cormorant_Garamond/CormorantGaramond-Medium.ttf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
