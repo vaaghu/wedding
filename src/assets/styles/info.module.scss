@@ -1,85 +1,103 @@
 @import "main";
 @import "index.module.scss";
 
-.section{
-    @extend .section;
-    @include flex(column, center, center)
+.section {
+  @extend .section;
+  @include flex(column, flex-start, center);
 }
-.card{
+.card {
+  border-radius: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  @include flex(column, flex-start, center);
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  width: 600px;
+  // height: 350px;
+  max-width: 75vw;
+  &:hover {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+  img {
+    width: 320px;
+    height: 320px;
     border-radius: 15px;
-    margin-bottom: 50px;
-    @include flex(row,flex-start,center);
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    width: 600px;
-    height: 350px;
-    max-width: 75vw;
-    &:hover{
-      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+    object-position: center;
+    @media (max-width: 400px) {
+      width: 80vw;
+      height: auto;
     }
-    img{
-      width: 320px;
-      height: 320px;
-      border-radius: 15px;
-      object-fit: cover;
-      object-position:center;
-      @media (max-width: 400px) {
-        width: 80vw;
-        height: auto;
-      }
-    }
-    @media (max-width: 680px) {
-      @include flex(column,flex-start,center);
-      width: auto;
-      height: fit-content;
-    }
+  }
+  @media (max-width: 768px) {
+    @include flex(column, flex-start, center);
+    width: auto;
+    height: fit-content;
+  }
 }
 
-.cardInfo{
-    padding: 5px 25px;
-    // height: 80%;
-    width: 320px;
-    @media (max-width: 400px) {
-      width: 95%;
+.cardInfo {
+  padding: 5px 25px;
+  // height: 80%;
+  width: 320px;
+  @media (max-width: 400px) {
+    width: 95%;
+  }
+  @media (max-width: 768px) {
+    @include flex(row, space-evenly, center);
+    div > canvas {
+      scale: 0.8;
     }
-    @media (min-width: 680px) {
-      width: 250px;
-      height: 300px;
-      @include flex(column,space-between,center);
-    }
-    p{
-        text-align: center;
-        font-family: "Poppins",sans-serif;
-        margin: 5px;
-    }
-    p:nth-child(1){
-        font-size: 20px;
-        font-style: bold;
-        font-weight: 700;
-    }
-    p:nth-child(2){
-      font-size: 18px;
-    }
-    @include flex(column,flex-start,center);
-    button{
-        border-radius: 15px;
-        width: auto;
-        font-size: 20px;
-        font-weight: 400;
-        padding: 3px 15px;
-        font-family: 'Poppins',sans-serif;
-        margin: 15px 3px;
-        border: none;
-        background-color: transparent;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        background: pink;
-    }
+    margin-top: 25px;
+  }
+  @media (min-width: 768px) {
+    width: 250px;
+    height: auto;
+  }
+  p {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    margin: 20px 5px;
+  }
+  p:nth-child(1) {
+    font-size: 20px;
+    font-style: bold;
+    font-weight: 700;
+  }
+  // p:nth-child(2){
+  //   font-size: 18px;
+  // }
+  @include flex(column, flex-start, center);
 }
-.backButton{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    margin: 15px;
-    border: none;
-    background-color: transparent;   
+.firstCardDiv {
+  @include flex(row, flex-start, center);
+  @media (max-width: 768px) {
+    @include flex(column, flex-start, center);
+  }
+}
+.secondCardDiv {
+  @include flex(column, flex-start, center);
+  margin-top: 25px;
+  width: 100%;
+}
+.cardButton {
+  border-radius: 15px;
+  width: auto;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 3px 15px;
+  font-family: "Poppins", sans-serif;
+  margin: 15px 3px;
+  border: none;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: pink;
+}
+.backButton {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin: 15px;
+  border: none;
+  background-color: transparent;
 }

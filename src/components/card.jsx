@@ -1,5 +1,6 @@
+/* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from "react";
-import { Card, Skeleton } from "antd";
+import { Card, Progress } from "antd";
 const { Meta } = Card;
 
 import PropTypes from "prop-types";
@@ -13,10 +14,10 @@ const CardComp = ({ cardInfo, navigate }) => {
     navigate("./info");
   };
 
-  let [isLoaded,setisLoaded] = useState(false);
-  const [image, setImage] = useState(null);
-  
+  let [image, setImage] = useState(null);
+  let [progress, setProgress] = useState(0);
   useEffect(() => {
+    setProgress(Math.round(Math.random() * 100));
     import(`../assets/images/${cardInfo.imgName}.webp`)
       .then((imageModule) => {
         setImage(imageModule.default);
@@ -27,25 +28,30 @@ const CardComp = ({ cardInfo, navigate }) => {
   }, []);
 
   return (
-    
-        <>
-        {image && 
-          <Card
+    <>
+      {image && (
+        <Card
           hoverable
           style={{
             width: 300,
             marginBottom: "25px",
-            border: "10px solid white"
+            border: "10px solid white",
           }}
           cover={<img alt="sample" src={image} />}
           onClick={cardClick}
-          onLoad={()=>{setisLoaded(true)}}
-          >
+        >
           <Meta title={cardInfo.title} description={cardInfo.description} />
+          <br />
+          {progress >= 1 && (
+            <Progress
+              status={progress != 100 ? "active" : "success"}
+              percent={progress}
+              strokeColor={{ from: "#ff0000", to: "#87d068" }}
+            />
+          )}
         </Card>
-        }
-        </>
-        
+      )}
+    </>
   );
 };
 
