@@ -4,9 +4,11 @@
   height: auto;
   margin: 0px;
   clip-path: polygon(0 0, 100% 0, 100% calc(100vh), 0 calc(100vh));
-  @media (max-width: 500px) {
-    width: 150vw;
-    transform: translateX(-40vw);
+  object-fit: cover;
+  object-position: center 50%;
+  @media (max-width: 768px) {
+    width: 100vw;
+    height: 80svh;
   }
 }
 
