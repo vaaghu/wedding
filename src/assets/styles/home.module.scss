@@ -3,10 +3,6 @@
   width: 99vw;
   height: auto;
   margin: 0px;
-  z-index: 0;
-  position: absolute;
-  top: 0px;
-  left: 0px;
   clip-path: polygon(0 0, 100% 0, 100% calc(100vh), 0 calc(100vh));
   @media (max-width: 500px) {
     width: 150vw;
@@ -35,17 +31,24 @@
   background: transparent;
   padding: 5px 10px;
   margin: 5px 10px;
+  text-align: center;
 }
 .info {
   font-size: 18px;
   z-index: 1;
   background: transparent;
+  text-align: center;
 }
 .firstContainer {
   width: 100vw;
-  height: 100vh;
-  @include flex(column, flex-end, center);
-  font-family: "Poppins";
+  position: relative;
+  @include flex(column, flex-start, center);
+  font-family: "CormorantGaramond", "Poppins", sans-serif;
+  margin-bottom: 35px;
+  div {
+    position: absolute;
+    bottom: 30%;
+  }
 }
 .eventCardContainer {
   @include flex(column, flex-end, center);
@@ -53,7 +56,7 @@
 .eventCard {
   @include flex(column, flex-end, center);
   p {
-    font-family: "Poppins";
+    font-family: "CormorantGaramond", "Poppins", sans-serif;
     margin: 5px 10px;
     text-align: center;
   }

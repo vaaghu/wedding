@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-// import backgroundImg from "@images/cupid.jpg";
+import backgroundImg from "@images/butterfly.webp";
 import homeStyle from "@styles/home.module.scss";
 import indexStyle from "@styles/index.module.scss";
 import React, { useEffect, useRef } from "react";
@@ -30,14 +30,15 @@ export default function Home({ navigate }) {
       onScroll={CatpureScroll}
       ref={sectionRef}
     >
-      {/* <div className={homeStyle.firstContainer}>
+      <div className={homeStyle.firstContainer}>
         <img src={backgroundImg} className={homeStyle.imgBackground} />
-        <img />
-        <p className={homeStyle.title}>NAME_ONE & NAME_TWO</p>
-        <p className={homeStyle.info}>
-          Nov 22, 2023 • Chennai, Tamil Nadu, India
-        </p>
-      </div> */}
+        <div>
+          <p className={homeStyle.title}>SRIPRIYA & PRASANNA</p>
+          <p className={homeStyle.info}>
+            Nov 22, 2023 • Chennai, Tamil Nadu, India
+          </p>
+        </div>
+      </div>
       {/* <div className={homeStyle.CarouselContainer}>
         <Carousel />
       </div>

@@ -2,13 +2,12 @@
 .section {
   margin: 0px;
   width: 100vw;
-  position: absolute;
-  top: 0px;
-  left: 0px;
+
   margin: 0px;
   overflow-x: hidden;
   background: #e2e8f0;
-  height: -webkit-fill-available;
+  height: 100svh;
+  z-index: 1;
   @include flex(column, flex-start, center);
   font-family: "CormorantGaramond", "Poppins", sans-serif;
   p {
