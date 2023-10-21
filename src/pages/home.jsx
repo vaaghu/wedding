@@ -23,10 +23,12 @@ export default function Home({ navigate }) {
     console.log(sectionRef.current, sectionRef.current.scrollTop);
     if (sectionRef.current) {
       console.log(sessionStorage.getItem("scrollTop"));
-
-      sectionRef.current.scrollTop = parseInt(
-        sessionStorage.getItem("scrollTop")
-      );
+      setTimeout(()=>{
+        sectionRef.current.scrollTop = parseInt(
+          sessionStorage.getItem("scrollTop")
+        );
+      },10)
+      
     }
   }, []);
   return (
