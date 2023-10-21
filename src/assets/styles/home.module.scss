@@ -112,10 +112,10 @@
 
 .arrowDownAnchore {
   // border: 1px solid black;
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: #fff4f4;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   font-size: 35px;
   @include flex(column, center, center);
   img {

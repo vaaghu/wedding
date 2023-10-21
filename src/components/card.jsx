@@ -38,6 +38,7 @@ const CardComp = ({ cardInfo, navigate }) => {
             border: "10px solid white",
             fontFamily: "CormorantGaramond, Poppins, sans-serif",
             fontSize: "14px",
+            backgroundColor: "#fff4f4",
           }}
           cover={<img alt="sample" src={image} />}
           onClick={cardClick}

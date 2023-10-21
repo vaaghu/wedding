@@ -57,7 +57,7 @@ export default function Info({ navigate }) {
                 items={collapseItems}
                 style={{
                   width: "100%",
-                  backgroundColor: "#c8ced6",
+                  backgroundColor: "#fffffe",
                   fontFamily: "CormorantGaramond, Poppins, sans-serif",
                   fontSize: "17px",
                 }}
