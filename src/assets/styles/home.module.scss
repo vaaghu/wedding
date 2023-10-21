@@ -97,6 +97,9 @@
 
 .listInfo {
   text-align: center;
+  width: 100vw;
+  @include flex(column, flex-start, center);
+  margin: 10px 5px;
   p {
     font-family: "CormorantGaramond", "Poppins", sans-serif;
   }

@@ -45,6 +45,7 @@ export default function Home({ navigate }) {
             alt="couple image"
             className={homeStyle.coupleImg}
           />
+          <br />
           <p className={homeStyle.info}>
             Welcome to our Investment registry!
             <br />
