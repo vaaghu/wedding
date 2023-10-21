@@ -31,7 +31,7 @@ export default function Info({ navigate }) {
           navigate("../");
         }}
       >
-        <img src={backArrow} alt="arrow" />
+        <img src={backArrow} alt="back" />
       </button>
       {cardInfo && (
         <div className={infoStyles.card}>
@@ -57,7 +57,7 @@ export default function Info({ navigate }) {
                 items={collapseItems}
                 style={{
                   width: "100%",
-                  backgroundColor: "#e2e8f0",
+                  backgroundColor: "#c8ced6",
                   fontFamily: "CormorantGaramond, Poppins, sans-serif",
                   fontSize: "17px",
                 }}

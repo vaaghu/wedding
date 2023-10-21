@@ -1,5 +1,8 @@
 /* eslint-disable prettier/prettier */
 import backgroundImg from "@images/butterfly.webp";
+import weddingCouple from "@images/weddingCouple.webp";
+import arrowDown from "@images/arrow_down.svg";
+
 import homeStyle from "@styles/home.module.scss";
 import indexStyle from "@styles/index.module.scss";
 import React, { useEffect, useRef } from "react";
@@ -31,44 +34,38 @@ export default function Home({ navigate }) {
       ref={sectionRef}
     >
       <div className={homeStyle.firstContainer}>
-        <img src={backgroundImg} className={homeStyle.imgBackground} />
+        <img
+          src={backgroundImg}
+          alt="background image"
+          className={homeStyle.imgBackground}
+        />
         <div>
-          <p className={homeStyle.title}>SRIPRIYA & PRASANNA</p>
+          <img
+            src={weddingCouple}
+            alt="couple image"
+            className={homeStyle.coupleImg}
+          />
           <p className={homeStyle.info}>
-            Nov 22, 2023 • Chennai, Tamil Nadu, India
+            Welcome to our Investment registry!
+            <br />
+            Thank you for being a part of our journey as we prepare to embark on
+            the next big chapter of our lives.
           </p>
         </div>
+        <a href="#listInfo" className={homeStyle.arrowDownAnchore}>
+          <img src={arrowDown} alt="anchore" />
+        </a>
       </div>
-      {/* <div className={homeStyle.CarouselContainer}>
-        <Carousel />
+      <div id="listInfo" className={homeStyle.listInfo}>
+        <h1>Our Wish list</h1>
+        <p>
+          In this special chapter of our lives, we have a few dreams and
+          financial goals we{"'"}d love to achieve.
+          <br />
+          Your contributions will help us make them a reality. Every gift brings
+          us one step closer to our shared dreams.
+        </p>
       </div>
-      <div className={homeStyle.eventCardContainer}>
-        <div className={homeStyle.eventCard}>
-          <p>ENGAGEMENT (NICHIATHARTHAM) CEREMONY</p>
-          <p>NOVEMBER 22, 2023 11:00–11:45</p>
-          <p>
-            Sri Krishnaswamy Kalyana Mandapam 1B Hindi Prachar Saba Road,
-            Chennai, TN, 600017, India
-          </p>
-        </div>
-        <div className={homeStyle.eventCard}>
-          <p>RECEPTION</p>
-          <p>NOVEMBER 22, 2023 11:00–11:45</p>
-          <p>
-            Sri Krishnaswamy Kalyana Mandapam 1B Hindi Prachar Saba Road,
-            Chennai, TN, 600017, India
-          </p>
-        </div>
-        <div className={homeStyle.eventCard}>
-          <p>WEDDING (MUHURTHAM)</p>
-          <p>NOVEMBER 22, 2023 11:00–11:45</p>
-          <p>
-            Sri Krishnaswamy Kalyana Mandapam 1B Hindi Prachar Saba Road,
-            Chennai, TN, 600017, India
-          </p>
-        </div>
-      </div> */}
-      <h1>Our Wish list</h1>
       <br />
       <div className={homeStyle.cardContainer}>
         {cardsInfo.map((card, index) => {
