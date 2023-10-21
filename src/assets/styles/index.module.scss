@@ -2,11 +2,10 @@
 .section {
   margin: 0px;
   width: 100vw;
-
   margin: 0px;
   overflow-x: hidden;
   background: $primaryColor;
-  height: 100svh;
+  height: 100dvh;
   z-index: 1;
   @include flex(column, flex-start, center);
   font-family: "CormorantGaramond", "Poppins", sans-serif;

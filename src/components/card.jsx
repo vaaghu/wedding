@@ -35,7 +35,7 @@ const CardComp = ({ cardInfo, navigate }) => {
           style={{
             width: 300,
             marginBottom: "25px",
-            border: "10px solid white",
+            border: "10px solid #fff4f4",
             fontFamily: "CormorantGaramond, Poppins, sans-serif",
             fontSize: "14px",
             backgroundColor: "#fff4f4",

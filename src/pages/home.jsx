@@ -15,16 +15,18 @@ import PropTypes from "prop-types";
 // import Carousel from "@components/carousel";
 
 export default function Home({ navigate }) {
-  const sectionRef = useRef(null);
+  let sectionRef = useRef(null);
   function CatpureScroll(event) {
-    localStorage.setItem("scrollTop", event.currentTarget.scrollTop);
+    sessionStorage.setItem("scrollTop", event.currentTarget.scrollTop);
   }
   useEffect(() => {
+    console.log(sectionRef.current, sectionRef.current.scrollTop);
     if (sectionRef.current) {
-      // console.log(localStorage.getItem("scrollTop"));
+      console.log(sessionStorage.getItem("scrollTop"));
+
       sectionRef.current.scrollTop = parseInt(
-        localStorage.getItem("scrollTop")
-      ); // Set the desired initial value (in pixels)
+        sessionStorage.getItem("scrollTop")
+      );
     }
   }, []);
   return (
