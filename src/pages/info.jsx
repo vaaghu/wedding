@@ -5,14 +5,28 @@ import PropTypes from "prop-types";
 
 import infoStyles from "@styles/info.module.scss";
 
-import cardImg from "@images/home.webp";
+// import cardImg from "@images/home.webp";
+
 import backArrow from "@images/arrow_back.svg";
 export default function Info({ navigate }) {
   let [cardInfo, setCardInfo] = useState(null);
   let [collapseItems, setCollapseItems] = useState(null);
   let [progress, setProgress] = useState(0);
+  let [image, setImage] = useState(null);
+
   useEffect(() => {
+    setProgress(Math.round(Math.random() * 100));
+
     let info = JSON.parse(localStorage.getItem("cardInfo"));
+
+    import(`../assets/images/${info.imgName}.jpg`)
+      .then((imageModule) => {
+        setImage(imageModule.default);
+      })
+      .catch((error) => {
+        console.error("Error loading image:", error);
+      });
+
     setCardInfo(info);
     setProgress(Math.floor(Math.random() * 100));
     setCollapseItems([
@@ -36,7 +50,7 @@ export default function Info({ navigate }) {
       {cardInfo && (
         <div className={infoStyles.card}>
           <div className={infoStyles.firstCardDiv}>
-            <img src={cardImg} alt="backImg" />
+            <img src={image} alt="backImg" />
             <div className={infoStyles.cardInfo}>
               <p>{cardInfo.title}</p>
               <Progress

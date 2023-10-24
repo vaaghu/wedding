@@ -18,7 +18,7 @@ const CardComp = ({ cardInfo, navigate }) => {
   let [progress, setProgress] = useState(0);
   useEffect(() => {
     setProgress(Math.round(Math.random() * 100));
-    import(`../assets/images/${cardInfo.imgName}.webp`)
+    import(`../assets/images/${cardInfo.imgName}.jpg`)
       .then((imageModule) => {
         setImage(imageModule.default);
       })
