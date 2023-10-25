@@ -23,12 +23,11 @@ export default function Home({ navigate }) {
     console.log(sectionRef.current, sectionRef.current.scrollTop);
     if (sectionRef.current) {
       console.log(sessionStorage.getItem("scrollTop"));
-      setTimeout(()=>{
+      setTimeout(() => {
         sectionRef.current.scrollTop = parseInt(
           sessionStorage.getItem("scrollTop")
         );
-      },10)
-      
+      }, 10);
     }
   }, []);
   return (
@@ -51,7 +50,7 @@ export default function Home({ navigate }) {
           />
           <br />
           <p className={homeStyle.info}>
-            Welcome to our Investment registry!
+            <i>Welcome to our Investment registry!</i>
             <br />
             Thank you for being a part of our journey as we prepare to embark on
             the next big chapter of our lives.

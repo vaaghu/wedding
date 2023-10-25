@@ -50,9 +50,12 @@
 }
 .info {
   font-size: 18px;
-  z-index: 1;
   background: transparent;
   text-align: center;
+  i:nth-child(1) {
+    font-size: 24px;
+    font-style: normal;
+  }
 }
 .firstContainer {
   width: 100vw;
