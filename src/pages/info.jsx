@@ -19,7 +19,7 @@ export default function Info({ navigate }) {
 
     let info = JSON.parse(localStorage.getItem("cardInfo"));
 
-    import(`../assets/images/${info.imgName}.jpg`)
+    import(`../assets/images/${info.imgName}.webp`)
       .then((imageModule) => {
         setImage(imageModule.default);
       })
