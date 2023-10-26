@@ -8,6 +8,7 @@ import infoStyles from "@styles/info.module.scss";
 // import cardImg from "@images/home.webp";
 
 import backArrow from "@images/arrow_back.svg";
+import RazorpayButton from "./razorPay";
 export default function Info({ navigate }) {
   let [cardInfo, setCardInfo] = useState(null);
   let [collapseItems, setCollapseItems] = useState(null);
@@ -78,7 +79,8 @@ export default function Info({ navigate }) {
                 bordered={false}
               />
             )}
-            <button className={infoStyles.cardButton}>Gift it!</button>
+            {/* <button className={infoStyles.cardButton}>Gift it!</button> */}
+            <RazorpayButton payment_id={cardInfo.payment_id} />
           </div>
         </div>
       )}
