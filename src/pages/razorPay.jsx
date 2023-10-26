@@ -5,14 +5,21 @@ import infoStyles from "@styles/info.module.scss";
 
 export default function Button({ payment_id }) {
   useEffect(() => {
-    console.log(payment_id);
+    // console.log(payment_id);
     const rzpPaymentForm = document.getElementById("rzp_payment_form");
-    if (!rzpPaymentForm.hasChildNodes()) {
-      const script = document.createElement("script");
-      script.src = "https://checkout.razorpay.com/v1/payment-button.js";
-      script.async = true;
+    let script = rzpPaymentForm.querySelector(
+      'script[src="https://checkout.razorpay.com/v1/payment-button.js"]'
+    );
+    if (script) {
       script.dataset.payment_button_id = payment_id;
-      rzpPaymentForm.appendChild(script);
+    } else {
+      if (!rzpPaymentForm.hasChildNodes()) {
+        script = document.createElement("script");
+        script.src = "https://checkout.razorpay.com/v1/payment-button.js";
+        script.async = true;
+        script.dataset.payment_button_id = payment_id;
+        rzpPaymentForm.appendChild(script);
+      }
     }
   });
   return (
