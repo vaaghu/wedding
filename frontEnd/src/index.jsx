@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "@pages/home";
 import Info from "@pages/info";
 import SuccessComp from "@pages/success";
+import ErrorComp from "@pages/error";
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function IndexComp() {
         <Route path="/" element={<Home navigate={navigate} />} />
         <Route path="/info/*" element={<Info navigate={navigate} />} />
         <Route path="/success" element={<SuccessComp />} />
+        <Route path="/*" element={<ErrorComp />} />
       </Routes>
     </>
   );
