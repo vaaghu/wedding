@@ -10,8 +10,8 @@ const CardComp = ({ cardInfo, navigate }) => {
   // console.log(cardInfo);
 
   let cardClick = () => {
-    localStorage.setItem("cardInfo", JSON.stringify(cardInfo));
-    navigate("./info");
+    // localStorage.setItem("cardInfo", JSON.stringify(cardInfo));
+    navigate("./info/" + cardInfo.id);
   };
 
   let [image, setImage] = useState(null);

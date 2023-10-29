@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "@pages/home";
 import Info from "@pages/info";
-
+import SuccessComp from "@pages/success";
 function App() {
   return (
     <BrowserRouter>
@@ -23,17 +23,15 @@ function IndexComp() {
     <>
       <Routes>
         <Route path="/" element={<Home navigate={navigate} />} />
-        <Route path="/info" element={<Info navigate={navigate} />} />
+        <Route path="/info/*" element={<Info navigate={navigate} />} />
+        <Route path="/success" element={<SuccessComp />} />
       </Routes>
     </>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <>
-    <App />
-  </>
-);
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(<App />);
 
 // serviceWorkerRegistration.register();

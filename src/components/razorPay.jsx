@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import infoStyles from "@styles/info.module.scss";
 
 export default function Button({ payment_id }) {
-  if (!payment_id) return null; // Render nothing if payment_id is not provided
+  if (!payment_id) return null;
 
   const createOrUpdateScript = () => {
     const rzpPaymentForm = document.getElementById("rzp_payment_form");
@@ -22,7 +22,7 @@ export default function Button({ payment_id }) {
     }
   };
 
-  useEffect(createOrUpdateScript, []); // Run the effect only once
+  useEffect(createOrUpdateScript, []);
 
   return <form id="rzp_payment_form" className={infoStyles.cardButton}></form>;
 }

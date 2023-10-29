@@ -4,11 +4,11 @@ import { Collapse, Progress } from "antd";
 import PropTypes from "prop-types";
 
 import infoStyles from "@styles/info.module.scss";
-
+import cardsJSON from "@utils/cardsInfo.json";
 // import cardImg from "@images/home.webp";
 
 import backArrow from "@images/arrow_back.svg";
-import RazorpayButton from "./razorPay";
+import RazorpayButton from "@components/razorPay";
 export default function Info({ navigate }) {
   let [cardInfo, setCardInfo] = useState(null);
   let [collapseItems, setCollapseItems] = useState(null);
@@ -17,26 +17,34 @@ export default function Info({ navigate }) {
 
   useEffect(() => {
     setProgress(Math.round(Math.random() * 100));
-
-    let info = JSON.parse(localStorage.getItem("cardInfo"));
-
-    import(`../assets/images/${info.imgName}.webp`)
-      .then((imageModule) => {
-        setImage(imageModule.default);
-      })
-      .catch((error) => {
-        console.error("Error loading image:", error);
-      });
-
-    setCardInfo(info);
+    let id = window.location.href.split("/").pop();
+    let info;
+    console.log(cardsJSON);
+    for (let card of cardsJSON) {
+      if (id == card.id) {
+        setCardInfo(card);
+        info = card;
+      }
+    }
+    if (info) {
+      //image
+      import(`../assets/images/${info.imgName}.webp`)
+        .then((imageModule) => {
+          setImage(imageModule.default);
+        })
+        .catch((error) => {
+          console.error("Error loading image:", error);
+        });
+      //infomation
+      setCollapseItems([
+        {
+          key: "1",
+          label: "Description",
+          children: <p>{info.description}</p>,
+        },
+      ]);
+    }
     setProgress(Math.floor(Math.random() * 100));
-    setCollapseItems([
-      {
-        key: "1",
-        label: "Description",
-        children: <p>{info.description}</p>,
-      },
-    ]);
   }, []);
   return (
     <section className={infoStyles.section}>

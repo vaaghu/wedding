@@ -1,0 +1,9 @@
+.iframe {
+  aspect-ratio: 5 / 3;
+  width: 95dvw;
+  border-radius: 15px;
+  max-width: 1000px;
+  @media (max-width: 475px) {
+    aspect-ratio: 5/4;
+  }
+}
