@@ -22,10 +22,10 @@ app.use(
 );
 
 const paymentSuccess = require("./src/routes/paymentSuccess.route");
-
+const progress = require("./src/routes/progress.route");
 
 //Middleware or to set router
-app.use("/", [paymentSuccess]);
+app.use("/", [paymentSuccess,progress]);
 
 app.listen(port, async () => {
   console.log(`App running on port http://localhost:${port}.`);
