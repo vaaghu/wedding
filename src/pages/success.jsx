@@ -6,7 +6,7 @@ import successStyle from "@styles/success.module.scss";
 
 import backgroundImg from "@images/butterfly.webp";
 
-const successComp = () => {
+const SuccessComp = () => {
   return (
     <section className={indexStyle.section}>
       <div className={homeStyle.firstContainer}>
@@ -31,4 +31,4 @@ const successComp = () => {
   );
 };
 
-export default successComp;
+export default SuccessComp;
