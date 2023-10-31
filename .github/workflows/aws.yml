@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: wedding
+    runs-on: self-hosted
     
     steps:
       - name: Clone Repository
