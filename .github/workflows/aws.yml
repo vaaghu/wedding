@@ -25,4 +25,4 @@ jobs:
           npm run build
 
       - name: Restart Services
-        run: sudo service nginx restart
+        run: sudo pm2 restart weddingFrontEnd
