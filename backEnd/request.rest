@@ -1,13 +1,17 @@
 GET http://localhost:3003/progressAll HTTP/1.1
 ###
+
 GET   http://localhost:3003/progressOne/1 HTTP/1.1
 content-Type: application/json
 
 {"id":1}
 //entity id == payment id of card 1
 ###
+//the below routes won't work 
+//reason: rawBody
 POST http://localhost:3003/paymentSuccess HTTP/1.1
 content-Type: application/json
+X-Razorpay-Signature: YOUR_WEBHOOK_SIGNATURE
 
 {
   "entity": "event",
